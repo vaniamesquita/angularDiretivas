@@ -1,0 +1,31 @@
+<app-panel title="Filmes!">
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Nota</th>
+  </tr>
+  <tr *ngFor="let movie of movies">
+    <td>{{movie.title}}</td>
+    <td><app-rating 
+      [(rating)]="movie.rating" 
+     
+      ></app-rating></td>
+  </tr>
+</table>
+</app-panel>
+
+<!-- 
+  ler [rating] @input - propety binding
+  e 
+  escrever (onRatingChange) @Output  - event binding
+  na mesma propriedade 
+  para isso podemos fazer ao mesmpo tempo usando o two-way binding
+  se usarmos a mesma sintaxe na nomeclatura (ao inves de onRatingChange, usar ratingChange), 
+  podemos usar apenas:
+  [(rating)]="movie.rating"
+
+  ao inves de:
+
+  [rating]="movie.rating" 
+  (RatingChange)="movie.rating = $event"
+-->

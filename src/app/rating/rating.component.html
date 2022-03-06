@@ -1,0 +1,7 @@
+
+
+<mat-icon class="rating" *ngFor="let i of [1,2,3,4,5]" (click)="onClick(i)">
+  
+  {{rating >= i ? 'star' : 'star_border' }}
+
+</mat-icon>

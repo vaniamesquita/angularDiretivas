@@ -1,0 +1,47 @@
+<h1>Exemplo ngFor</h1>
+<h2>To do List</h2>
+
+<!-- <div>
+  <input #inputDescription type="text" placeholder="descrição da tarefa"/>
+  <button (click)="addTask(inputDescription.value)">Adicionar tarefa</button>
+</div> -->
+
+<div>
+  <input type="text" placeholder="descrição da tarefa" [(ngModel)]="newTask" />
+  <button (click)="addTask()">Adicionar tarefa</button>
+</div>
+
+<table>
+  <tr *ngFor="let task of tasks; let i = index"> 
+    <!-- index, variavel implicita que sempre vai existir no ngFor -->
+    <td><input type="checkbox" [(ngModel)]="task.done"></td> 
+    <td>{{task.description}}</td>
+    <td><button (click)="deleteTask(i)">X</button></td>
+  </tr>
+</table>
+
+<input type='text' [(ngModel)]='text'/>
+<div>{{text}}</div>
+
+<!-- não conseguimos usar o two way binding na linha 12 no checked, pois não temos
+o evento checkedChange (output) mas podemos usar um recurso do angular, importando 
+o o FormsModule de @angular/forms, podemos usar a diretiva ngModel:
+[(ngModel)]="task.done"
+ao inves de
+[checked]="task.done"
+assim podemos ter realmente o valor do checkbox, pois antes estava no selecionando
+no checkbox, porem o valor nao mudava de fato
+
+o ngModel é um recurso do angular, que faz todo o two way binding em todos os inputs,
+todos os elementos html relacionados a formulario.
+
+um exemplo de uso em um campo de texto:
+<input type='text' [(ngModel)]='text'/>
+<div>{{text}}</div>
+
+e criando la no todo-list.component.ts:
+text: string = '';
+
+também podemos melhorar o input da descrição:
+ao inves de referenciar direto pelo template reference verbal (?, sei la, tipo o id #), podemos
+-->

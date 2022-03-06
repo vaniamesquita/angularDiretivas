@@ -1,0 +1,6 @@
+<h2>
+  {{ title }}
+  <button *ngIf="expanded == false" (click)="expand()">+</button>
+  <button *ngIf="expanded == true" (click)="noExpand()">-</button>
+</h2>
+<ng-content *ngIf="expanded == true"></ng-content>

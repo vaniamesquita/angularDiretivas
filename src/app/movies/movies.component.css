@@ -1,0 +1,15 @@
+tr td, tr th {
+  border-bottom: 1px solid grey;
+  padding: 2px;
+}
+
+table {
+  width: 300px;
+  text-align: center;
+  border-spacing: 0;
+}
+
+tr th {
+  font-size: 1.2rem;
+}
+
